@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8e9e8">
+<title>For Matsu ♡ — from Yuii</title>
+<style>
+:root{
+ --ink:#684b55;--rose:#d98fa5;--rose2:#f4cbd2;--cream:#fff8ef;
+ --gold:#c7a66b;--deep:#49323f;--paper:#fffaf5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:var(--ink);font-family:Georgia,'Times New Roman',serif;
+ background:linear-gradient(180deg,#f9e8e7 0%,#fff4ed 42%,#f7e6e1 100%);
+ overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.32;
+ background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#d7a5ad 1px,transparent 1px);
+ background-size:73px 73px,119px 119px;background-position:10px 12px,48px 55px;
+ animation:twinkle 4s ease-in-out infinite alternate;
+}
+@keyframes twinkle{from{opacity:.18}to{opacity:.48}}
+#petals{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:5}
+.petal{position:absolute;top:-12vh;width:13px;height:18px;border-radius:90% 10% 85% 15%;
+ background:linear-gradient(135deg,#fff0f1,#e9a8b8);opacity:.8;
+ animation:fall linear infinite;filter:drop-shadow(0 2px 3px #bd829044)}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0)}50%{transform:translate3d(55px,55vh,0) rotate(230deg)}100%{transform:translate3d(-25px,112vh,0) rotate(520deg)}}
+main{position:relative;z-index:1;width:min(92%,760px);margin:auto;padding:34px 0 70px;text-align:center}
+.topline{font:10px Arial,sans-serif;letter-spacing:5px;text-transform:uppercase;color:#a77d79}
+.moon-scene{height:160px;position:relative;margin:6px auto 4px;max-width:430px}
+.moon{
+ position:absolute;left:50%;top:22px;transform:translateX(-50%);font-size:83px;color:#fff9df;
+ text-shadow:0 0 12px #fff,0 0 32px #e7bd9b,0 0 58px #d9a2b2;
+ animation:moonfloat 4s ease-in-out infinite;
+}
+@keyframes moonfloat{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-9px)}}
+.spark{position:absolute;color:#fff;font-size:18px;animation:sparkle 2s infinite alternate}
+.s1{left:18%;top:35px}.s2{right:18%;top:58px;animation-delay:.8s}.s3{left:29%;top:110px;animation-delay:1.2s}.s4{right:30%;top:12px;animation-delay:.4s}
+@keyframes sparkle{from{opacity:.35;transform:scale(.7) rotate(0)}to{opacity:1;transform:scale(1.25) rotate(35deg)}}
+h1{font-size:clamp(38px,9vw,68px);font-weight:normal;line-height:1.08;margin:4px 0 10px;color:#bd7f91;text-shadow:0 3px 0 #fff8f0,0 0 25px #e8b5bf}
+.subtitle{font-style:italic;font-size:19px;color:#927078;margin:0 0 16px}
+.jp{font-size:15px;letter-spacing:7px;color:#bd9a6a;margin:10px 0 25px}
+.divider{display:flex;align-items:center;gap:13px;justify-content:center;color:#c6a36f;margin:24px auto}
+.divider:before,.divider:after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,#c6a36f)}
+.divider:after{transform:rotate(180deg)}
+.panel{
+ position:relative;margin:22px 0;padding:30px clamp(19px,5vw,42px);
+ background:linear-gradient(145deg,#fffaf6ee,#fff0f0ee);border:1px solid #d8b98a99;
+ border-radius:7px 27px 7px 27px;box-shadow:0 14px 40px #986c6c1c, inset 0 0 0 5px #fff9f2;
+}
+.panel:before,.panel:after{content:"✿";position:absolute;color:#d8a2a8;font-size:23px;opacity:.75}
+.panel:before{top:12px;left:15px}.panel:after{bottom:10px;right:15px}
+h2{font-weight:normal;color:#b77e8e;font-size:26px;margin:0 0 17px}
+p{font-size:17px;line-height:1.9;color:#765c62}
+.letter{max-width:590px;margin:auto}
+.names{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:20px 0}
+.nickname,.action{
+ border:1px solid #d6b58c;background:#fff9f4;color:#956b75;border-radius:30px;
+ padding:11px 16px;font:14px Georgia,serif;cursor:pointer;transition:.25s;
+ box-shadow:0 4px 12px #b9858518
+}
+.nickname:hover,.action:hover{transform:translateY(-3px);background:#fce8e8;box-shadow:0 8px 18px #b9858530}
+#nicknameMessage{min-height:34px;color:#b47b8d;font-style:italic;font-size:18px}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.gift{
+ border:1px solid #e2c7ae;background:#fff8f1;border-radius:18px;padding:18px 8px;
+ cursor:pointer;transition:.25s;color:#9a7580;font:14px Georgia,serif;min-height:115px
+}
+.gift:hover{transform:translateY(-5px) rotate(-1deg);background:#fff0f0}
+.gift span{display:block;font-size:32px;margin-bottom:9px}
+.reveal{display:none;margin:18px auto 0;padding:18px;background:#fff4f2;border-radius:16px;line-height:1.8;color:#a36e7d;animation:appear .6s ease both}
+.reveal.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.song{display:inline-block;text-decoration:none;margin-top:8px}
+.moon-button{border:0;background:transparent;font-size:48px;cursor:pointer;filter:drop-shadow(0 0 12px #e5bd8c);transition:.3s}
+.moon-button:hover{transform:scale(1.16) rotate(-10deg)}
+.footer{font-size:14px;color:#a98487;margin:36px 0 0;line-height:2}
+.final{font-size:22px;color:#bd8192;font-style:italic}
+@media(max-width:480px){main{padding-top:24px}.gifts{gap:7px}.gift{font-size:12px;padding:14px 4px}.gift span{font-size:28px}.panel{padding:27px 18px}}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+<main>
+ <div class="topline">a little japanese dream · made with love</div>
+ <div class="moon-scene" aria-hidden="true">
+  <span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✧</span><span class="spark s4">✦</span>
+  <div class="moon">☾</div>
+ </div>
+ <h1>Happy Birthday,<br>Matsu ♡</h1>
+ <p class="subtitle">De Yuii para su wewe</p>
+ <div class="jp">桜 · 月 · 愛</div>
+ <div class="divider">✿ ❀ ✿</div>
+
+ <section class="panel">
+  <h2>Para ti, Matsu</h2>
+  <div class="letter">
+   <p>Quería dejarte un rinconcito especial, algo que puedas abrir y recordar lo mucho que significas para mí. Entre tantas cosas del mundo, me alegra que nuestros caminos se hayan encontrado.</p>
+   <p>Ojalá este día te regale motivos para sonreír, momentos bonitos y todo ese cariño que mereces. Gracias por ser tú. ♡</p>
+   <p>In a universe full of stars, I'm glad I found you, my Matsu.</p>
+  </div>
+ </section>
+
+ <section class="panel">
+  <h2>Todos esos nombres que son tuyos</h2>
+  <p>Porque cada apodo guarda un pedacito de cariño…</p>
+  <div class="names">
+   <button class="nickname" data-msg="Wewe… mi forma favorita de llamarte. ♡">wewe</button>
+   <button class="nickname" data-msg="Amorcito, así de bonito eres para mí.">amorcito</button>
+   <button class="nickname" data-msg="Mi vida, qué suerte la mía de coincidir contigo.">mi vida</button>
+   <button class="nickname" data-msg="Amor, simplemente tú. ♡">amor</button>
+   <button class="nickname" data-msg="Mi bebé Matsu, siempre tan especial.">mi bebé Matsu</button>
+   <button class="nickname" data-msg="Te amo. Más de lo que cabe en una página.">te amo</button>
+   <button class="nickname" data-msg="Te adoro, mi persona bonita.">te adoro</button>
+  </div>
+  <div id="nicknameMessage" aria-live="polite">Toca uno de tus apodos… ✨</div>
+ </section>
+
+ <section class="panel">
+  <h2>Tres regalitos para ti</h2>
+  <p>Elige cuál quieres abrir primero. ♡</p>
+  <div class="gifts">
+   <button class="gift" data-target="gift1"><span>🎁</span>Un regalo</button>
+   <button class="gift" data-target="gift2"><span>💌</span>Una cartita</button>
+   <button class="gift" data-target="gift3"><span>🌸</span>Un deseo</button>
+  </div>
+  <div id="gift1" class="reveal">Si pudiera envolverte algo, sería un día lleno de sonrisas, tranquilidad y todo lo bonito que mereces. ♡</div>
+  <div id="gift2" class="reveal">Gracias por existir en mi pequeño universo, Matsu. Este rinconcito siempre tendrá un pedacito de Yuii para ti.</div>
+  <div id="gift3" class="reveal">Que cada pétalo que caiga te recuerde que mereces cosas preciosas, hoy y todos los días. 🌸</div>
+ </section>
+
+ <section class="panel">
+  <h2>Nuestra canción</h2>
+  <p>Hay canciones que parecen guardar momentos. Esta es la que elegí para acompañar este pequeño recuerdo.</p>
+  <iframe
+   style="border-radius:16px;max-width:100%;margin-top:12px"
+   src="https://open.spotify.com/embed/track/6qhjms7S2YL9j3Fdi8Mgvr?utm_source=generator&theme=0&autoplay=1"
+   width="100%" height="152" frameborder="0"
+   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+   loading="eager" title="Those Eyes — New West">
+  </iframe>
+  <p style="font-size:13px;color:#a98789">La canción está integrada aquí. Si tu navegador bloquea el inicio automático, toca reproducir una vez. ♡</p>
+ </section>
+
+ <section class="panel">
+  <h2>Un secreto de la luna</h2>
+  <p>La luna tiene algo guardado para ti…</p>
+  <button class="moon-button" id="moonSecret" aria-label="Abrir mensaje secreto">🌙</button>
+  <div id="moonMessage" class="reveal">Te amo y te adoro, mi bebé Matsu. Gracias por formar parte de mis días. Con cariño, tu Yuii. ♡</div>
+ </section>
+
+ <div class="divider">✿ ❀ ✿</div>
+ <div class="final">Te amo, mi melocotóncito. 💞👑</div>
+ <div class="footer">夜空の下で、いつもあなたを想ってる。<br>Hecho con cariño por Yuii · para Matsu ♡</div>
+</main>
+<script>
+const petalLayer=document.getElementById('petals');
+for(let i=0;i<26;i++){
+ const p=document.createElement('i');p.className='petal';
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDuration=(9+Math.random()*12)+'s';
+ p.style.animationDelay=(-Math.random()*18)+'s';
+ p.style.transform=`scale(${.55+Math.random()*.8})`;
+ petalLayer.appendChild(p);
+}
+document.querySelectorAll('.nickname').forEach(btn=>{
+ btn.addEventListener('click',()=>document.getElementById('nicknameMessage').textContent=btn.dataset.msg);
+});
+document.querySelectorAll('.gift').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  document.querySelectorAll('.reveal').forEach(el=>{if(el.id.startsWith('gift'))el.classList.remove('show')});
+  document.getElementById(btn.dataset.target).classList.add('show');
+ });
+});
+document.getElementById('moonSecret').addEventListener('click',()=>{
+ document.getElementById('moonMessage').classList.toggle('show');
+});
+</script>
+</body>
+</html>
